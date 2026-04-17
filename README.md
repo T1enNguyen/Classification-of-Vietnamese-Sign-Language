@@ -2,7 +2,6 @@
 
 Dự án phân loại ký hiệu ngôn ngữ ký hiệu Việt Nam (Vietnamese Sign Language) sử dụng Deep Learning và Transfer Learning.
 
-
 <div align="center">
   <img src="reports/figures/samples_data.png" width="90%">
   <p><i>Vài mẫu trong bộ dữ liệu VSL</i></p>
@@ -28,13 +27,14 @@ Dự án này xây dựng mô hình phân loại 25 ký hiệu chữ cái trong 
 
 ### Các mô hình được triển khai
 
-| Mô hình | Test Accuracy | Test Loss | Số Parameters | Kích thước |
-|---------|---------------|-----------|---------------|------------|
-| **VGG16** | **99.00%** | 0.0678 | 27.6M | 105 MB |
-| **ResNet50** | **98.96%** | 0.0402 | ~25M | ~98 MB |
-| **MobileNet** | **98.80%** | 0.0519 | ~4.2M | ~16 MB |
+| Mô hình       | Test Accuracy | Test Loss | Số Parameters | Kích thước |
+| ------------- | ------------- | --------- | ------------- | ---------- |
+| **VGG16**     | **99.00%**    | 0.0678    | 27.6M         | 105 MB     |
+| **ResNet50**  | **98.96%**    | 0.0402    | ~25M          | ~98 MB     |
+| **MobileNet** | **98.80%**    | 0.0519    | ~4.2M         | ~16 MB     |
 
 **Nhận xét:**
+
 - **VGG16** đạt độ chính xác cao nhất (99.00%) nhưng có kích thước lớn nhất
 - **ResNet50** cân bằng tốt giữa độ chính xác và kích thước mô hình
 - **MobileNet** nhẹ nhất, phù hợp cho triển khai trên thiết bị di động
@@ -62,13 +62,14 @@ Classification-of-Vietnamese-Sign-Language/
 
 ### So sánh các mô hình
 
-| Mô hình | Test Accuracy | Test Loss | Val Accuracy | Số Parameters | Thời gian huấn luyện |
-|---------|---------------|-----------|--------------|---------------|---------------------|
-| **VGG16** | **99.00%** | 0.0678 | 99.00% | 27.6M | ~60 phút |
-| **ResNet50** | **98.96%** | 0.0402 | 98.48% | ~25M | ~35 phút |
-| **MobileNet** | **98.80%** | 0.0519 | 98.68% | ~4.2M | ~15 phút |
+| Mô hình       | Test Accuracy | Test Loss | Val Accuracy | Số Parameters | Thời gian huấn luyện |
+| ------------- | ------------- | --------- | ------------ | ------------- | -------------------- |
+| **VGG16**     | **99.00%**    | 0.0678    | 99.00%       | 27.6M         | ~60 phút             |
+| **ResNet50**  | **98.96%**    | 0.0402    | 98.48%       | ~25M          | ~35 phút             |
+| **MobileNet** | **98.80%**    | 0.0519    | 98.68%       | ~4.2M         | ~15 phút             |
 
 **Phân tích:**
+
 - **VGG16**: Đạt độ chính xác cao nhất nhưng tốn nhiều thời gian huấn luyện và bộ nhớ
 - **ResNet50**: Loss thấp nhất, cân bằng tốt giữa hiệu suất và tốc độ
 - **MobileNet**: Nhanh nhất, nhẹ nhất, phù hợp cho ứng dụng thực tế trên mobile
@@ -76,18 +77,21 @@ Classification-of-Vietnamese-Sign-Language/
 ### Chi tiết từng mô hình
 
 #### 1. VGG16
+
 - **Test Accuracy**: 99.00%
 - **Test Loss**: 0.0678
 - **Kiến trúc**: VGG16 pretrained trên ImageNet
 - **Đặc điểm**: Kiến trúc đơn giản, nhiều tham số, độ chính xác cao nhất
 
 #### 2. ResNet50
+
 - **Test Accuracy**: 98.96%
 - **Test Loss**: 0.0402
 - **Kiến trúc**: ResNet50 pretrained trên ImageNet với skip connections
 - **Đặc điểm**: Loss thấp nhất, huấn luyện ổn định nhờ residual connections
 
 #### 3. MobileNet
+
 - **Test Accuracy**: 98.80%
 - **Test Loss**: 0.0519
 - **Kiến trúc**: MobileNetV1 với depthwise separable convolutions
@@ -98,11 +102,13 @@ Classification-of-Vietnamese-Sign-Language/
 Tất cả các mô hình đều sử dụng chiến lược huấn luyện 2 giai đoạn:
 
 **Giai đoạn 1 - Warmup (5 epochs):**
+
 - Đóng băng base model
 - Chỉ huấn luyện lớp phân loại
 - Adam optimizer với learning rate warmup (0.0003 → 0.001)
 
 **Giai đoạn 2 - Fine-tuning (10 epochs):**
+
 - Mở băng toàn bộ mô hình
 - SGD optimizer với momentum 0.9
 - Learning rate: 1e-5
@@ -235,7 +241,6 @@ Dữ liệu được lưu dưới dạng **TFRecord** với nén GZIP:
   <img src="reports/figures/mobilenet_acc_loss.png" width="90%">
   <p><i>Quá trình huấn luyện MobileNet: Nhanh nhất với 4.2M parameters</i></p>
 </div>
-
 
 ## Tác giả
 
