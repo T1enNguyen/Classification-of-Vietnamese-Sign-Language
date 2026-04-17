@@ -1,0 +1,4 @@
+- VGG16, ResNet50, MobileNet
+https://drive.google.com/drive/folders/1EAddrr6MtpKt4HXUfzcsBy4Sh8uj3wHb
+
+
