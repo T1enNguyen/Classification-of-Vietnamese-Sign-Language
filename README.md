@@ -158,16 +158,30 @@ Dữ liệu được lưu dưới dạng **TFRecord** với nén GZIP:
 
 ### Quá trình huấn luyện VGG16
 
-![[vgg16_acc_loss.png]]
+
+<div align="center">
+  <img src="reports/figures/vgg16_acc_loss.png" width="90%">
+
+</div>
+
 
 ### Quá trình huấn luyện ResNet50
 
-![[reports/figures/resnet50_acc_loss.png]]
+
+<div align="center">
+  <img src="reports/figures/resnet50_acc_loss.png" width="90%">
+ 
+</div>
 
 
 ### Quá trình huấn luyện MobileNetV1
 
-![[resnet50_acc_loss 1.png]]
+
+<div align="center">
+  <img src="reports/figures/mobilenet_acc_loss.png" width="90%">
+ 
+</div>
+
 
 ## Tác giả
 

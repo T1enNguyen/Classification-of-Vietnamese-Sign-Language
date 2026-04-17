@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "33b792702e7302ca",
+        "id": "96f761549ff7f5b0",
         "type": "tabs",
         "children": [
           {
-            "id": "dbaa5a082c7870c7",
+            "id": "216acf4df23e05b8",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 293.5
   },
   "right": {
     "id": "2c782853ef3cdbe2",
@@ -183,9 +183,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "dbaa5a082c7870c7",
+  "active": "216acf4df23e05b8",
   "lastOpenFiles": [
-    "reports/figures/resnet50_acc_loss 1.png",
+    "reports/figures/mobilenet_acc_loss.png",
     "README.md",
     "reports/figures/resnet50_acc_loss.png",
     "reports/figures/vgg16_acc_loss.png",
